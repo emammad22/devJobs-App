@@ -1,0 +1,79 @@
+body {
+    margin: 0;
+    font-family: 'Kumbh Sans', sans-serif;
+    background-color: #F2F2F2;
+}
+
+.container {
+    max-width: 1570px;
+    margin: 0 auto;
+    /* border: 1px solid black; */
+    position: relative;
+}
+
+/* Header css begin */
+
+.header {
+    background-image: url(./assets/desktop/bg-pattern-header.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 162px;
+    /* position: relative; */
+}
+
+.container .header-inner .header-up {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+}
+
+.header-up .button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+.button .toggle-switch {
+    width: 48px;
+    height: 24px;
+    border-radius: 12px;
+    background-color: #fff;
+    position: relative;
+}
+
+.button .light,
+.button .dark {
+    background: none;
+    border: none;
+}
+
+.button .toggle-switch::before {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #5964E0;
+    top: 5px;
+    left: 0;
+    transform: translateX(5px);
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+/* .button .toggle-switch:hover::before {
+    transform: translateX(29px);
+    transition: all 0.2s ease;
+} */
+
+.button .toggle-switch.toggle-on::before {
+    transform: translateX(29px);
+    transition: all 0.2s ease;
+}
+
+.button .toggle-switch.toggle-off::before {
+    transform: translateX(5px);
+    transition: all 0.2s ease;
+}

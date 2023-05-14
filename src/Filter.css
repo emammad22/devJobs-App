@@ -1,0 +1,92 @@
+.filter {
+    display: flex;
+    position: absolute;
+    bottom: -100px;
+    height: 80px;
+    background: #fff;
+    width: 100%;
+    border-radius: 6px;
+    align-items: center;
+}
+
+.filter .filter-title,
+.filter-location,
+.filter-time {
+    width: 33%;
+    border-right: 1px solid #6E8098;
+}
+
+.filter-title {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-left: 32px;
+    height: inherit;
+}
+
+.filter-title input[type='text'] {
+    width: 271px;
+    border: none;
+    outline: none;
+}
+
+.filter-title input[type='text']::placeholder,
+.filter-location input[type='text']::placeholder {
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+.filter-location {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-left: 28px;
+    height: inherit;
+}
+
+.filter-location input{
+    border: none;
+    outline: none;
+    width: 135px;
+}
+
+.filter-time{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    border: none;
+}
+
+.filter-time .checkbox {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: 32px;
+}
+
+.filter-time input {
+    width: 24px;
+    height: 24px;
+    background-color: rgba(25, 32, 45 0.2);
+}
+
+.filter-time label {
+    color: #19202D;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.filter-time .submit{
+    margin-right: 10px;
+}
+
+.filter-time .submit button{
+    width: 120px;
+    height: 48px;
+    background: #5964E0;
+    border-radius: 5px;
+    color: #fff;
+    border: none;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+}
