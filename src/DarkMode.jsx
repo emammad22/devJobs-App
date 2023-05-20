@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import './App'
-import dark from './assets/desktop/icon-moon.svg'
-import light from './assets/desktop/icon-sun.svg'
+import dark from '../assets/desktop/icon-moon.svg'
+import light from '../assets/desktop/icon-sun.svg'
 
 function DarkMode({ handleMode,classNa}) {
 

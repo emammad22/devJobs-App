@@ -3,8 +3,9 @@ import vacancies from './data.json'
 export default vacancies.map((vacancy) => {
     const {
         id,
-        company,
         logo,
+        logoBackground,
+        company,
         position,
         postedAt,
         contract,
@@ -17,11 +18,11 @@ export default vacancies.map((vacancy) => {
     } = vacancy
 
 
-
     return {
         id,
+        logo ,
+        logoBackground,
         company,
-        logo,
         position,
         postedAt,
         contract,
@@ -33,3 +34,4 @@ export default vacancies.map((vacancy) => {
         role
     }
 })
+

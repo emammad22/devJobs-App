@@ -3,17 +3,27 @@
     position: absolute;
     bottom: -100px;
     height: 80px;
-    background: #fff;
+    background: var(--card-color);
     width: 100%;
     border-radius: 6px;
     align-items: center;
+}
+
+.filter input {
+    background-color: var(--card-color);
+    color: var(--text-color);
+    
+}
+
+.filter input:focus{
+    color: var(--text-color);
 }
 
 .filter .filter-title,
 .filter-location,
 .filter-time {
     width: 33%;
-    border-right: 1px solid #6E8098;
+    border-right: 1px solid rgb(110, 128, 152, 0.3);
 }
 
 .filter-title {
@@ -43,13 +53,13 @@
     height: inherit;
 }
 
-.filter-location input{
+.filter-location input {
     border: none;
     outline: none;
     width: 135px;
 }
 
-.filter-time{
+.filter-time {
     display: flex;
     align-items: center;
     gap: 30px;
@@ -70,16 +80,16 @@
 }
 
 .filter-time label {
-    color: #19202D;
+    color: var(--text-color);
     font-weight: 700;
     font-size: 16px;
 }
 
-.filter-time .submit{
+.filter-time .submit {
     margin-right: 10px;
 }
 
-.filter-time .submit button{
+.filter-time .submit button {
     width: 120px;
     height: 48px;
     background: #5964E0;
@@ -89,4 +99,8 @@
     font-weight: 700;
     font-size: 16px;
     cursor: pointer;
+}
+
+.filter-time .submit button:hover {
+    background: #939BF4;
 }
