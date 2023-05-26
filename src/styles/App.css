@@ -1,21 +1,22 @@
-:root{
-    --body-color : #F4F6F8;
-    --text-color : #000000;
-    --card-color : #FFFFFF;
+:root {
+    --body-color: #F4F6F8;
+    --text-color: #000000;
+    --card-color: #FFFFFF;
     --backgr-image: url(../assets/desktop/bg-pattern-header.svg)
 }
 
-:root[data-theme = 'dark']{
-    --body-color :#121721;
-    --text-color : #FFFFFF;
+:root[data-theme='dark'] {
+    --body-color: #121721;
+    --text-color: #FFFFFF;
     --card-color: #19202D;
 }
 
 
-*{
+* {
     box-sizing: border-box;
     transition: background-color 0.5s ease;
 }
+
 body {
     margin: 0;
     font-family: 'Kumbh Sans', sans-serif;
@@ -27,6 +28,18 @@ body {
     margin: 0 auto;
     /* border: 1px solid black; */
     position: relative;
+}
+
+@media screen and (max-width:1550px) {
+    .container{
+        margin: 0 35px;
+    }
+}
+
+@media screen and (max-width : 1140px) {
+    .container {
+        margin: 0px 45px;
+    }
 }
 
 /* Header css begin */
@@ -99,14 +112,14 @@ body {
 }
 
 /* vacancy card css begin  and main section*/
-.main .main-inner{
+.main .main-inner {
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
     /* justify-content: space-between; */
 }
 
-.vacancy-card{
+.vacancy-card {
     width: 350px;
     height: 228px;
     border-radius: 6px;
@@ -115,12 +128,13 @@ body {
     position: relative;
 }
 
-.vacancy-card .vacancy-des .time-contract .time,.contract{
+.vacancy-card .vacancy-des .time-contract .time,
+.contract {
     color: #6E8098;
     font-size: 16px;
 }
 
-.vacancy-des .time-contract{
+.vacancy-des .time-contract {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -128,7 +142,7 @@ body {
     margin-top: 20px;
 }
 
-.vacancy-des .time-contract .dot{
+.vacancy-des .time-contract .dot {
     display: inline-block;
     width: 4px;
     height: 4px;
@@ -136,7 +150,7 @@ body {
     background: #6E8098;
 }
 
-.vacancy-des .position{
+.vacancy-des .position {
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 17px;
@@ -144,22 +158,22 @@ body {
     cursor: pointer;
 }
 
-.vacancy-des .position:hover{
+.vacancy-des .position:hover {
     color: #6E8098;
 }
 
-.vacancy-des .company-name{
+.vacancy-des .company-name {
     color: #6E8098;
     margin: 0;
 }
 
-.vacancy-des .country{
+.vacancy-des .country {
     font-size: 14px;
     color: #5964E0;
     font-weight: 700;
 }
 
-.vacancy-des .company-logo{
+.vacancy-des .company-logo {
     position: absolute;
     top: -25px;
     width: 50px;
@@ -168,4 +182,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+@media screen and (max-width : 1140px) {
+    .main .main-inner {
+        display: flex;
+        justify-content: center;
+    }
 }

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import vacancies from './data'
-import './App.css'
+import vacancies from '../data'
+import './styles/App.css'
 import DarkMode from "./DarkMode";
 import Filter from "./Filter";
-import './Filter.css'
+import './styles/Filter.css'
 import Vacancy from "./Vacancy";
 
 
@@ -12,6 +12,7 @@ function App() {
     const [mode, setMode] = useState(false)
     const [theme, setTheme] = useState('')
     const [filteredList, setFilteredList] = useState(vacancies);
+    const [more, setMore] = useState(0);
 
 
     useEffect(() => {

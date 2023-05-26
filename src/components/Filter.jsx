@@ -18,7 +18,7 @@ function Filter(props) {
     function handleContract(value) {
         if (value) {
             setFullTime('Full Time');
-        }else{
+        } else {
             setFullTime('')
         }
     }
@@ -58,9 +58,9 @@ function Filter(props) {
                     />
                     <label htmlFor="fulltime">Full Time Only</label>
                 </div>
-                <div className="submit">
-                    <button className="submit-btn">Search</button>
-                </div>
+            </div>
+            <div className="submit">
+                <button className="submit-btn"><small className="btn-text">Search</small><i className="fa-solid fa-magnifying-glass"></i></button>
             </div>
         </form>
     );

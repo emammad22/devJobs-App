@@ -7,15 +7,17 @@
     width: 100%;
     border-radius: 6px;
     align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
 }
 
 .filter input {
     background-color: var(--card-color);
     color: var(--text-color);
-    
+
 }
 
-.filter input:focus{
+.filter input:focus {
     color: var(--text-color);
 }
 
@@ -35,7 +37,7 @@
 }
 
 .filter-title input[type='text'] {
-    width: 271px;
+    width: 70%;
     border: none;
     outline: none;
 }
@@ -85,22 +87,75 @@
     font-size: 16px;
 }
 
-.filter-time .submit {
-    margin-right: 10px;
+.filter .submit {
+    margin-right: 40px;
+    width: 120px;
 }
 
-.filter-time .submit button {
+.filter .submit button {
     width: 120px;
     height: 48px;
     background: #5964E0;
     border-radius: 5px;
-    color: #fff;
     border: none;
-    font-weight: 700;
-    font-size: 16px;
     cursor: pointer;
 }
 
-.filter-time .submit button:hover {
+.filter .submit .submit-btn .fa-solid {
+    display: none;
+}
+
+.filter .submit .submit-btn .btn-text {
+    font-weight: 700;
+    font-size: 16px;
+    color: #fff;
+}
+
+.filter .submit button:hover {
     background: #939BF4;
+}
+
+/* Filter desidn for mobile Apps */
+
+@media screen and (max-width:650px) {
+    .filter .filter-title {
+        border: none;
+        width: 100%;
+    }
+
+    .filter-location {
+        display: none;
+    }
+
+    .filter-time {
+        display: none;
+    }
+
+    .filter .submit button {
+        width: 48px;
+        height: 48px;
+    }
+
+    .filter .submit .submit-btn .fa-solid {
+        display: block;
+        color: #ffffff;
+        font-size: 20px;
+    }
+
+    .filter .submit .submit-btn .btn-text {
+        display: none;
+    }
+}
+
+/* Filter design for Tablet */
+
+@media screen and (max-width:900px) {
+    .filter .submit{
+        margin-right: 5px;
+    }
+
+    .filter-title input[type='text']::-webkit-input-placeholder::before{
+        content: 'Filter by title...';
+    }
+
 }
