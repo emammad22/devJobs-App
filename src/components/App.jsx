@@ -5,6 +5,9 @@ import DarkMode from "./DarkMode";
 import Filter from "./Filter";
 import '../styles/Filter.css'
 import Vacancy from "./Vacancy";
+import '../styles/Button.css'
+
+const LIMIT = 5;
 
 
 function App() {
@@ -13,11 +16,18 @@ function App() {
     const [theme, setTheme] = useState('')
     const [filteredList, setFilteredList] = useState(vacancies);
     const [more, setMore] = useState(0);
+    const [count, setCount] = useState(LIMIT);
 
 
     useEffect(() => {
-        console.log(vacancies);
-    })
+        setFilteredList(vacancies.filter((vacancy, index) => {
+            return index < count ? vacancy : null;
+        })
+        )
+        // setFilteredList((filteredList)=> [...filteredList, ...vacancies.filter((vacancy,index)=>{
+        //     return index < count ? vacancy : null;
+        // })])
+    }, [count]);
 
     function handleMode() {
         mode ? setMode(false) : setMode(true);
@@ -29,16 +39,26 @@ function App() {
         }
     }
 
+    // (fulltime.value ? vacancy.contract == 'Full Time' : vacancy) &&
+
     function filterVacancy(e) {
         e.preventDefault();
         const { title, location, fulltime } = e.target.elements;
+        console.log(fulltime.value);
         console.log(e.target.elements);
-        setFilteredList(vacancies.filter((vacancy)=>{
-            return vacancy.location.toLowerCase().includes(location.value.toLowerCase()) 
-            && vacancy.position.toLowerCase().includes(title.value)
-        }).map((vacancy)=>{
+        setFilteredList(vacancies.filter((vacancy) => {
+            return  vacancy.location.toLowerCase().includes(location.value.toLowerCase())
+                && vacancy.position.toLowerCase().includes(title.value);
+        }).map((vacancy) => {
             return vacancy;
         }))
+    }
+
+    function handleLoadMore() {
+        if (count >= vacancies.length) {
+            return;
+        }
+        setCount((count) => count + LIMIT);
     }
     return (
         <>
@@ -59,7 +79,7 @@ function App() {
                     <div className="main-inner">
                         {
                             filteredList.map((vacancy, index) => {
-                                return <Vacancy
+                                return index < count ? <Vacancy
                                     key={index}
                                     logo={vacancy.logo}
                                     back={vacancy.logoBackground}
@@ -68,12 +88,16 @@ function App() {
                                     contract={vacancy.contract}
                                     position={vacancy.position}
                                     location={vacancy.location}
-                                />
+                                /> : null;
                             })
                         }
 
                     </div>
                 </div>
+            </div>
+
+            <div className="button">
+                <button className={`more ${count === vacancies.length ? 'disabled' : null}`} onClick={handleLoadMore}>Load More</button>
             </div>
         </>
     );

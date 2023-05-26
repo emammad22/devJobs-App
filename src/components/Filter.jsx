@@ -5,7 +5,7 @@ function Filter(props) {
 
     const [position, setPosition] = useState('');
     const [location, setLocation] = useState('');
-    const [fullTime, setFullTime] = useState('');
+    const [fullTime, setFullTime] = useState(false);
 
     function handleTitle(value) {
         setPosition(value)
@@ -17,9 +17,9 @@ function Filter(props) {
 
     function handleContract(value) {
         if (value) {
-            setFullTime('Full Time');
+            setFullTime(value);
         } else {
-            setFullTime('')
+            setFullTime(false)
         }
     }
 

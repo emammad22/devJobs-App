@@ -3,7 +3,7 @@ import React from "react";
 
 function Vacancy(props) {
     return (
-        <div className="vacancy-card">
+        <div className="vacancy-card animate__animated animate__fadeIn">
             <div className="vacancy-des">
                 <div className="company-logo" style={{backgroundColor : props.back}}>
                     <img src={props.logo} alt="" />

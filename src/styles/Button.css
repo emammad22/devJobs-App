@@ -1,0 +1,22 @@
+.button{
+    text-align: center;
+    margin-top: 56px;
+    margin-bottom: 20px;
+}
+
+.button .more {
+    background: #5964E0;
+    width: 141px;
+    height: 48px;
+    border-radius: 5px;
+    color: #fff;
+    border: none;
+    font-family: 'Kumbh Sans';
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button .more.disabled{
+    display: none;
+}
