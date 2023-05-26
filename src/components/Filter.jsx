@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import searchSvg from '../assets/desktop/icon-search.svg'
-import locationSvg from '../assets/desktop/icon-location.svg'
+import searchSvg from '../../assets/desktop/icon-search.svg'
+import locationSvg from '../../assets/desktop/icon-location.svg'
 function Filter(props) {
 
     const [position, setPosition] = useState('');

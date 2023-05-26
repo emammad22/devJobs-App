@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import vacancies from '../data'
-import './styles/App.css'
+import '../styles/App.css'
 import DarkMode from "./DarkMode";
 import Filter from "./Filter";
-import './styles/Filter.css'
+import '../styles/Filter.css'
 import Vacancy from "./Vacancy";
 
 
