@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import vacancies from '../data'
 import '../styles/App.css'
 import DarkMode from "./DarkMode";
@@ -19,16 +19,6 @@ function App() {
     const [count, setCount] = useState(LIMIT);
 
 
-    useEffect(() => {
-        setFilteredList(vacancies.filter((vacancy, index) => {
-            return index < count ? vacancy : null;
-        })
-        )
-        // setFilteredList((filteredList)=> [...filteredList, ...vacancies.filter((vacancy,index)=>{
-        //     return index < count ? vacancy : null;
-        // })])
-    }, [count]);
-
     function handleMode() {
         mode ? setMode(false) : setMode(true);
         const { theme } = document.documentElement.dataset;
@@ -39,27 +29,47 @@ function App() {
         }
     }
 
-    // (fulltime.value ? vacancy.contract == 'Full Time' : vacancy) &&
-
     function filterVacancy(e) {
         e.preventDefault();
         const { title, location, fulltime } = e.target.elements;
-        console.log(fulltime.value);
-        console.log(e.target.elements);
-        setFilteredList(vacancies.filter((vacancy) => {
-            return  vacancy.location.toLowerCase().includes(location.value.toLowerCase())
-                && vacancy.position.toLowerCase().includes(title.value);
-        }).map((vacancy) => {
-            return vacancy;
-        }))
+        console.log(title, location, fulltime);
+        let list = [...vacancies]
+        if (title.value) {
+            list = list.filter((vacancy) => {
+                return vacancy.position.toLowerCase().includes(title.value.toLowerCase())
+            })
+        }
+        if (location.value) {
+            list = list.filter((vacancy) => {
+                return vacancy.location.toLowerCase().includes(location.value.toLowerCase())
+            })
+        }
+        if (fulltime.value) {
+            list = list.filter((vacancy) => {
+                return vacancy.contract === fulltime.value;
+            })
+        }
+        console.log(list);
+        setFilteredList(list);
     }
 
     function handleLoadMore() {
         if (count >= vacancies.length) {
             return;
         }
-        setCount((count) => count + LIMIT);
+        setCount((count) => count + 5);
     }
+
+    function disableLoadMore() {
+        if (count === vacancies.length) {
+            return 'disabled'
+        }
+
+        if (filteredList.length < 5) {
+            return 'disabled'
+        }
+    }
+
     return (
         <>
             <div className="header">
@@ -78,8 +88,8 @@ function App() {
                 <div className="container">
                     <div className="main-inner">
                         {
-                            filteredList.map((vacancy, index) => {
-                                return index < count ? <Vacancy
+                            filteredList.slice(0, count).map((vacancy, index) => {
+                                return <Vacancy
                                     key={index}
                                     logo={vacancy.logo}
                                     back={vacancy.logoBackground}
@@ -88,7 +98,7 @@ function App() {
                                     contract={vacancy.contract}
                                     position={vacancy.position}
                                     location={vacancy.location}
-                                /> : null;
+                                />
                             })
                         }
 
@@ -97,8 +107,11 @@ function App() {
             </div>
 
             <div className="button">
-                <button className={`more ${count === vacancies.length ? 'disabled' : null}`} onClick={handleLoadMore}>Load More</button>
-            </div>
+                <button className={`more ${disableLoadMore()}`}
+                    onClick={handleLoadMore}>
+                    Load More
+                </button>
+            </div >
         </>
     );
 }
