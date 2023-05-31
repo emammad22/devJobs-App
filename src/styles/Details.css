@@ -1,0 +1,91 @@
+.details .details-inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 26px;
+}
+
+.details .details-inner .company-block {
+    width: 730px;
+    height: 140px;
+    position: absolute;
+    top: -100px;
+    border-radius: 6px;
+    justify-content: space-between;
+}
+
+.company-block {
+    display: flex;
+    background: var(--card-color);
+}
+
+.company-block .company-logo {
+    flex-basis: 25%;
+    width: 140px;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.company-block .company-logo img {
+    width: 80px;
+}
+
+.company-block .company-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-basis: 70%;
+    color: var(--text-color);
+}
+
+.company-details .site-btn .site {
+    width: 147px;
+    height: 48px;
+    background: var(--btn-color);
+    border: none;
+    border-radius: 5px;
+    color: var(--btn-text-color);
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 20px;
+
+}
+
+.company-details .site-btn .site:hover {
+    background: var(--btn-hover-color);
+}
+
+.details .details-inner .vacancy-details {
+    margin-top: 70px;
+    width: 730px;
+    border-radius: 6px;
+    padding: 48px;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    /* gap: 40px; */
+    background: var(--card-color);
+}
+
+.vacancy-details .vacancy-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.apply-now .apply {
+    background: #5964E0;
+    width: 141px;
+    height: 48px;
+    border-radius: 5px;
+    color: #fff;
+    border: none;
+    font-family: 'Kumbh Sans';
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+}

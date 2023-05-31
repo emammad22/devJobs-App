@@ -1,14 +1,14 @@
 .filter {
     display: flex;
     position: absolute;
-    bottom: -100px;
     height: 80px;
     background: var(--card-color);
-    width: 100%;
     border-radius: 6px;
+    width: 100%;
     align-items: center;
     justify-content: space-between;
     box-sizing: border-box;
+    top: -120px;
 }
 
 .filter input {

@@ -2,19 +2,27 @@
     --body-color: #F4F6F8;
     --text-color: #000000;
     --card-color: #FFFFFF;
-    --backgr-image: url(../assets/desktop/bg-pattern-header.svg)
+    --backgr-image: url(../assets/desktop/bg-pattern-header.svg);
+    --btn-color: rgba(89, 100, 224, 0.1);
+    --btn-text-color: #5964E0;
+    --btn-hover-color: rgba(89, 100, 224, 0.35);
 }
 
 :root[data-theme='dark'] {
     --body-color: #121721;
     --text-color: #FFFFFF;
     --card-color: #19202D;
+    --btn-color: rgba(25, 32, 45, 1);
+    --btn-text-color: #fff;
+    --btn-hover-color: rgb(110, 128, 152);
 }
 
 
 * {
     box-sizing: border-box;
     transition: background-color 0.5s ease;
+    text-decoration: none;
+
 }
 
 body {
@@ -31,7 +39,7 @@ body {
 }
 
 @media screen and (max-width:1550px) {
-    .container{
+    .container {
         margin: 0 35px;
     }
 }
@@ -116,7 +124,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
-    /* justify-content: space-between; */
+    padding-top: 40px;
 }
 
 .vacancy-card {
